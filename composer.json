@@ -1,0 +1,69 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*",
+        "barryvdh/laravel-debugbar": "^2.3",
+        "arcanedev/log-viewer": "^4.1",
+        "ryan/toastr-for-laravel": "^1.1",
+        "laravelcollective/html": "~5.0",
+        "baum/baum": "~1.1",
+        "predis/predis": "^1.1",
+        "doctrine/dbal": "^2.5",
+        "guzzlehttp/guzzle": "^6.2",
+        "latrell/alipay": "dev-master",
+        "socialiteproviders/manager": " ~2.0",
+        "socialiteproviders/qq": "v2.0.5",
+        "laravel/socialite": "^2.0",
+        "socialiteproviders/weixin": "3.0.*",
+        "socialiteproviders/weibo": "v2.0.1",
+        "alibabacloud/client": "^1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+	    "Package\\":"packages/src/"
+        },
+        "files": [
+            "app/Helper/function.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

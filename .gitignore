@@ -1,0 +1,13 @@
+/node_modules
+/public/storage
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+/public/laravel-u-editor
+/config/UEditorUpload.php
+/config/toastr.php
+/resources/views/vendor/UEditor
+/resources/views/vendor/toastr
+/storage
